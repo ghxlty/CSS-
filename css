@@ -148,11 +148,11 @@ p{
   /* !important is needed here because Hotmail/Outlook.com uses !important to
      kill the margin in <p>. We need this to win. */
   font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   color: #333 !important;
-  line-height: 1.8em !important;
+  line-height: 1.75em !important;
   letter-spacing: 0.1em !important;
-  margin: 1em 1em !important; /* 增加段落边距 */
+  margin: 1em 0.25em !important; /* 增加段落边距,1em=16px */
   text-align: justify !important;
 }
 
@@ -179,9 +179,9 @@ li{
 ul li {
   margin: 0.2em 0;
   font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   color: #333 !important;
-  line-height: 1.8em !important;
+  line-height: 1.75em !important;
   letter-spacing: 0.1em !important;
   margin: 0.2em 0.2em !important;
 }
@@ -218,10 +218,10 @@ dl dd {
 }
 
 blockquote, q {
-  border-left: 6px solid #dce6f0;
+  border-left: 4px solid #dce6f0;
   /* background-color: #f2f7fb;*/
-  padding: 0em; /* 删除内边距 */
-  margin: 0em 1em;
+  padding: 0em 0.5rem; /* 删除内边距 */
+  margin: 1em 0em;
   color: #819198;
   quotes: none;
 }
