@@ -148,11 +148,11 @@ p{
   /* !important is needed here because Hotmail/Outlook.com uses !important to
      kill the margin in <p>. We need this to win. */
   font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   color: #333 !important;
   line-height: 1.75em !important;
   letter-spacing: 0.1em !important;
-  margin: 1em 1em !important; /* 增加段落边距,1em=16px */
+  margin: 1em 1px !important; /* 增加段落边距,1em=16px */
   text-align: justify !important;
 }
 
