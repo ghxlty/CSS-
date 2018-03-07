@@ -10,6 +10,8 @@
 
 /* This is the overall wrapper, it should be treated as the `body` section. */
 
+/* 全局 */
+
 .markdown-here-wrapper {
 }
 
@@ -18,6 +20,106 @@
    on the URL you're *sending* from, not the URL where the recipient views it.
 */
 /* .markdown-here-wrapper[data-md-url*="mail.yahoo."] ul { color: red; } */
+
+/* ============段落============= */
+
+p{
+  /* !important is needed here because Hotmail/Outlook.com uses !important to
+     kill the margin in <p>. We need this to win. */
+  font-family: Avenir, "PingFangTC-Light" !important;
+  font-size: 15px !important;
+  color: #333 !important;
+  line-height: 1.75em !important;
+  letter-spacing: 0.1em !important;
+  margin: 1em 1px !important; /* 增加段落边距,1em=16px */
+  text-align: justify !important;
+}
+
+
+/* ==============标题================= */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.3em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  letter-spacing: 0.1em !important;
+}
+
+h1 {
+  font-size: 1.7em;
+  border-bottom: 1px solid #ddd;
+  color: black;
+}
+
+h2 {
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: #3bb8af;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+
+/* =================列表=============== */
+ul, ol {
+  padding-left: 0em;
+  margin: 1.2em 2em;
+
+}
+
+li{
+  margin: 0.2em 0;
+  font-family: Avenir, "PingFangTC-Light" !important;
+  font-size: 15px !important;
+  color: #333 !important;
+  line-height: 1.8em !important;
+  letter-spacing: 0.1em !important;
+  margin: 0.2em 0.2em !important;
+}
+
+ul li {
+  margin: 0.2em 0;
+  font-family: Avenir, "PingFangTC-Light" !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  line-height: 1.75em !important;
+  letter-spacing: 0.1em !important;
+  margin: 0.2em 0.2em !important;
+}
+
+/* Smaller spacing for sub-lists */
+ul ul, ul ol, ol ul, ol ol {
+  margin: 0;
+  padding-left: 1em;
+}
+
+/* Use Roman numerals for sub-ordered-lists. (Like Github.) */
+ol ol, ul ol {
+  list-style-type: circle;
+}
+
+/* Use letters for sub-sub-ordered lists. (Like Github.) */
+ul ul ol, ul ol ol, ol ul ol, ol ol ol {
+  list-style-type: square;
+}
+
+/* ====================代码块==================== */
 
 pre, code {
   font-family: Avenir, "PingFangTC-Light";
@@ -128,95 +230,8 @@ pre code .linenum/*显示代码行数对应的样式*/
 .hljs-strong {
   font-weight: bold;
 }
-/* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
-code look non-monospace. This rule will override it. */
-.markdown-here-wrapper[data-md-url*="wordpress."] code span {
-  font: inherit;
-}
 
-/* Wordpress adds a grey background to `pre` elements that doesn't go well with
-our syntax highlighting. */
-.markdown-here-wrapper[data-md-url*="wordpress."] pre {
-  background-color: transparent;
-}
-
-/* This spacing has been tweaked to closely match Gmail+Chrome "paragraph" (two line breaks) spacing.
-Note that we only use a top margin and not a bottom margin -- this prevents the
-"blank line" look at the top of the email (issue #243).
-*/
-p{
-  /* !important is needed here because Hotmail/Outlook.com uses !important to
-     kill the margin in <p>. We need this to win. */
-  font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 15px !important;
-  color: #333 !important;
-  line-height: 1.75em !important;
-  letter-spacing: 0.1em !important;
-  margin: 1em 1px !important; /* 增加段落边距,1em=16px */
-  text-align: justify !important;
-}
-
-table, pre, dl, blockquote, q, ul, ol {
-  margin: 1.2em 0em;
-}
-
-ul, ol {
-  padding-left: 0em;
-  margin: 1.2em 2em;
-
-}
-
-li{
-  margin: 0.2em 0;
-  font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 15px !important;
-  color: #333 !important;
-  line-height: 1.8em !important;
-  letter-spacing: 0.1em !important;
-  margin: 0.2em 0.2em !important;
-}
-
-ul li {
-  margin: 0.2em 0;
-  font-family: Avenir, "PingFangTC-Light" !important;
-  font-size: 14px !important;
-  color: #333 !important;
-  line-height: 1.75em !important;
-  letter-spacing: 0.1em !important;
-  margin: 0.2em 0.2em !important;
-}
-
-/* Smaller spacing for sub-lists */
-ul ul, ul ol, ol ul, ol ol {
-  margin: 0;
-  padding-left: 1em;
-}
-
-/* Use Roman numerals for sub-ordered-lists. (Like Github.) */
-ol ol, ul ol {
-  list-style-type: circle;
-}
-
-/* Use letters for sub-sub-ordered lists. (Like Github.) */
-ul ul ol, ul ol ol, ol ul ol, ol ol ol {
-  list-style-type: square;
-}
-
-dl {
-  padding: 0;
-}
-
-dl dt {
-  font-size: 1em;
-  font-weight: bold;
-  font-style: italic;
-}
-
-dl dd {
-  margin: 0 0 1em;
-  padding: 0 1em;
-}
-
+/* 引用块 */
 blockquote, q {
   display: block;
   padding: 0em 0.2rem; /* 增加内边距 */
@@ -233,8 +248,7 @@ strong, b{/*强调*/
 }
 
 
-/* 设置引用文本颜色 */
-blockquote p {/*引用块*/
+blockquote p {
   color: rgb(119, 117, 117) !important
 }
 
@@ -242,42 +256,13 @@ blockquote::before, blockquote::after, q::before, q::after {
   content: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 1.3em 0 1em;
-  padding: 0;
-  font-weight: bold;
-  letter-spacing: 0.1em !important;
-}
+/* 超链接 */
+/* 强调 */
+/* 斜体 */
+/* 删除 */
 
-h1 {
-  font-size: 1.7em;
-  border-bottom: 1px solid #ddd;
-  color: black;
-}
 
-h2 {
-  font-size: 1.4em;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-  color: #3bb8af;
-}
-
-h3 {
-  font-size: 1.3em;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 1em;
-  color: #777;
-}
+/* ======================表格===================== */
 
 table {
   border-collapse: collapse;
@@ -317,3 +302,51 @@ table tr th {
  font-weight: bold;
  background-color: #F0F0F0;
 }
+
+
+
+
+
+
+
+/* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
+code look non-monospace. This rule will override it. */
+.markdown-here-wrapper[data-md-url*="wordpress."] code span {
+  font: inherit;
+}
+
+/* Wordpress adds a grey background to `pre` elements that doesn't go well with
+our syntax highlighting. */
+.markdown-here-wrapper[data-md-url*="wordpress."] pre {
+  background-color: transparent;
+}
+
+/* This spacing has been tweaked to closely match Gmail+Chrome "paragraph" (two line breaks) spacing.
+Note that we only use a top margin and not a bottom margin -- this prevents the
+"blank line" look at the top of the email (issue #243).
+*/
+
+table, pre, dl, blockquote, q, ul, ol {
+  margin: 1.2em 0em;
+}
+
+
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+dl dd {
+  margin: 0 0 1em;
+  padding: 0 1em;
+}
+
+
+
+
