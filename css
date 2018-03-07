@@ -218,11 +218,11 @@ dl dd {
 }
 
 blockquote, q {
-  border-left: 4px solid #3bb8af;
-  /* background-color: #fafafa;*/
+  border-left: 6px solid #dce6f0;
+  /* background-color: #f2f7fb;*/
   padding: 0em; /* 删除内边距 */
   margin: 0em 1em;
-  color: #777;
+  color: #819198;
   quotes: none;
 }
 
