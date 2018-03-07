@@ -39,13 +39,95 @@ pre {
   line-height: 1.2em;
 }
 
-pre code /*代码块*/ {
-  white-space: pre;
-  overflow: auto; /* fixes issue #70: Firefox/Thunderbird: Code blocks with horizontal scroll would have bad background colour */
-  padding: 0.5em 0.7em;
-  display: block !important; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
+pre code/*增加代码的border*/
+{
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-left: 6px solid rgb(33, 152, 99);
 }
 
+pre code .linenum/*显示代码行数对应的样式*/
+{
+ padding-right:20px;
+ word-spacing: 0px;
+}
+
+.hljs {  /*代码块高亮的全局属性*/
+  color: #a9b7c6;
+  background: #282b2e;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-params
+{
+  color: #ff9823;
+}
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: #AE87FA;
+}
+
+.hljs-function,
+.hljs-built_in,
+.hljs-name,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-deletion {
+  color: #f82375;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link {
+  color: #629755;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #808080;
+}
+
+.hljs-meta {
+  color: #5bdaed;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-addition {
+  color: #eedc70;
+}
+
+.hljs-attr,
+.hljs-section,
+.hljs-title,
+.hljs-type {
+  color: #a5da2d;
+}
+
+.hljs-selector-class
+{
+   color: #a5da2d;
+}
+
+.hljs-name,
+.hljs-selector-id,
+{ 
+  color: #f92672;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
 /* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
 code look non-monospace. This rule will override it. */
 .markdown-here-wrapper[data-md-url*="wordpress."] code span {
@@ -86,7 +168,7 @@ ul, ol {
 
 li{
   margin: 0.2em 0;
-  font-family: Avenir, "PingFangSC-Light" !important;
+  font-family: Avenir, "PingFangTC-Light" !important;
   font-size: 15px !important;
   color: #333 !important;
   line-height: 1.8em !important;
@@ -96,7 +178,7 @@ li{
 
 ul li {
   margin: 0.2em 0;
-  font-family: Avenir, "PingFangSC-Light" !important;
+  font-family: Avenir, "PingFangTC-Light" !important;
   font-size: 15px !important;
   color: #333 !important;
   line-height: 1.8em !important;
@@ -201,7 +283,7 @@ table {
   border-spacing: 0;
   font-size: .8em;
   border: 0;
-  font-family: Avenir, "PingFangSC-Light";
+  font-family: Avenir, "PingFangTC-Light";
 }
 
 tbody {
